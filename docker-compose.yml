@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+    cadastrodecaminhao.visualizacaomvc:
+        image: ${DOCKER_REGISTRY-}cadastrodecaminhaovisualizacaomvc
+        build:
+            context: .
+            dockerfile: Apresentacao/CadastroDeCaminhao.VisualizacaoMVC/Dockerfile
+
+
+    caminhaoContainer:
+        image: postgres
+
+volumes:
+    data_caminhao:

@@ -1,0 +1,38 @@
+﻿@model IEnumerable<CadastroDeCaminhao.Aplicacao.DTO.CaminhaoDTO>
+
+<div class="row justify-content-end">
+
+    <div class="">
+        <a class="btn btn-success" asp-controller="Caminhao" asp-action="RegistrarUmNovoCaminhao">Registre um novo modelo</a>
+    </div>
+
+</div>
+
+<hr class="clearfix" />
+<div class="col-12 row justify-content-center">
+
+    <div class="col-12">
+
+        @foreach (var caminhao in Model)
+        {
+            <div class="card">
+                
+                <div class="p-3 m-3 d-flex flex-row justify-content-center">
+                    <span class="col-8">Nome do caminhão: @caminhao.NomeDoCaminhao - Ano de fabricação: @caminhao.AnoDeFabricacao - Ano do modelo: @caminhao.AnoModelo - Tipo: @caminhao.Modelo</span>
+                    <a class="mx-2 d-inline-block btn btn-warning" asp-action="EditarCaminhao" asp-route-id="@caminhao.Id"><i class="fa-solid fa-pen-to-square"></i></a>
+                    <a class="mx-2 d-inline-block btn btn-danger" asp-action="DeletarCaminhao" asp-route-id="@caminhao.Id"><i class="fa-solid fa-eraser"></i></a>
+
+                </div>
+
+                @if (!string.IsNullOrEmpty(caminhao.ImageBase64))
+                {
+                    <div class="text-center">
+                        <img class="img-thumbnail" src="@caminhao.ImageBase64" width="200" height="200"/>
+                    </div>
+                }
+            </div>
+        }
+
+    </div>
+
+</div>
