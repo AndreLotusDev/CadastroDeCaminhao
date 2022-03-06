@@ -9,10 +9,10 @@
     }
 </style>
 
-<h4 class="h4">Registre um modelo de caminhão novo</h4>
+<h4 class="h4">Edite um caminhão já existe</h4>
 <div>
 
-    <form id="caminhao" method="post" asp-controller="Caminhao" asp-action="Cadastrar">
+    <form id="caminhao" method="post" asp-controller="Caminhao" asp-action="PostarEdicaoCaminhao">
 
         @Html.ValidationSummary(true)  
 
@@ -66,7 +66,7 @@
         </div>
 
         <div class="form-group">
-            <button type="submit" class="btn btn-success col-12">Cadastrar </button>
+            <button type="submit" class="btn btn-success col-12">Editar </button>
         </div>
 
     </form>

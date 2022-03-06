@@ -30,7 +30,7 @@ namespace CadastroDeCaminhao.Data.Repositorio
         {
             try
             {
-                await AtualizaAsync(caminhaoMapeadoParaCriar);
+                await Task.Run(() => _contexto.Update(caminhaoMapeadoParaCriar));
 
                 await _contexto.SalvaAlteracoesAsync();
 
