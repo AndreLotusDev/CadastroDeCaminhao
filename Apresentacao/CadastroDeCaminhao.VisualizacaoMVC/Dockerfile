@@ -2,14 +2,14 @@
 
 FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS base
 WORKDIR /app
-EXPOSE 80
-EXPOSE 443
+EXPOSE 4000:80
+EXPOSE 5000:443
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
 COPY ["Apresentacao/CadastroDeCaminhao.VisualizacaoMVC/CadastroDeCaminhao.VisualizacaoMVC.csproj", "Apresentacao/CadastroDeCaminhao.VisualizacaoMVC/"]
 COPY ["Core/CadastroDeCaminhao.Aplicacao/CadastroDeCaminhao.Aplicacao.csproj", "Core/CadastroDeCaminhao.Aplicacao/"]
-COPY ["core/CadastroDeCaminhao.Dominio/CadastroDeCaminhao.Dominio.csproj", "core/CadastroDeCaminhao.Dominio/"]
+COPY ["Core/CadastroDeCaminhao.Dominio/CadastroDeCaminhao.Dominio.csproj", "Core/CadastroDeCaminhao.Dominio/"]
 COPY ["Infraestrutura/CadastroDeCaminhao.Data/CadastroDeCaminhao.Data.csproj", "Infraestrutura/CadastroDeCaminhao.Data/"]
 RUN dotnet restore "Apresentacao/CadastroDeCaminhao.VisualizacaoMVC/CadastroDeCaminhao.VisualizacaoMVC.csproj"
 COPY . .

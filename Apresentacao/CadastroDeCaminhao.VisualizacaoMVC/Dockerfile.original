@@ -9,8 +9,8 @@ FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
 COPY ["Apresentacao/CadastroDeCaminhao.VisualizacaoMVC/CadastroDeCaminhao.VisualizacaoMVC.csproj", "Apresentacao/CadastroDeCaminhao.VisualizacaoMVC/"]
 COPY ["Core/CadastroDeCaminhao.Aplicacao/CadastroDeCaminhao.Aplicacao.csproj", "Core/CadastroDeCaminhao.Aplicacao/"]
+COPY ["Core/CadastroDeCaminhao.Dominio/CadastroDeCaminhao.Dominio.csproj", "Core/CadastroDeCaminhao.Dominio/"]
 COPY ["Infraestrutura/CadastroDeCaminhao.Data/CadastroDeCaminhao.Data.csproj", "Infraestrutura/CadastroDeCaminhao.Data/"]
-COPY ["Core/CadastroDeCaminhao.Dominio/CadastroDeCaminhao.Dominio.csproj", "core/CadastroDeCaminhao.Dominio/"]
 RUN dotnet restore "Apresentacao/CadastroDeCaminhao.VisualizacaoMVC/CadastroDeCaminhao.VisualizacaoMVC.csproj"
 COPY . .
 WORKDIR "/src/Apresentacao/CadastroDeCaminhao.VisualizacaoMVC"

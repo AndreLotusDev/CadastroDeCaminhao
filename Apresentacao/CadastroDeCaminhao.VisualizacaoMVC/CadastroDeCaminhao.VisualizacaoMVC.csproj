@@ -34,7 +34,7 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\..\Core\CadastroDeCaminhao.Aplicacao\CadastroDeCaminhao.Aplicacao.csproj" />
-	  <ProjectReference Include="..\..\core\CadastroDeCaminhao.Dominio\CadastroDeCaminhao.Dominio.csproj" />
+	  <ProjectReference Include="..\..\Core\CadastroDeCaminhao.Dominio\CadastroDeCaminhao.Dominio.csproj" />
 	  <ProjectReference Include="..\..\Infraestrutura\CadastroDeCaminhao.Data\CadastroDeCaminhao.Data.csproj" />
 	</ItemGroup>
 
